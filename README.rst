@@ -14,7 +14,7 @@ Instructions
 
 #. Clone the template project, replacing ``my-project`` with the name of the project you are creating::
 
-        git clone https://github.com/TachyonicProject/project-template.git my-project
+        git clone https://github.com/TachyonicProject/template-project.git my-project
         cd my-project
 
 #. Edit the metadata file ``package/metadata.py`` to correctly describe your project.
