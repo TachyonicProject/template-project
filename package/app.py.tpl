@@ -27,8 +27,16 @@
 # CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
 # THE POSSIBILITY OF SUCH DAMAGE.
-import $package.models
-
+from luxon import register
 import luxon.resources.wsgi.index
 
+from psychokinetic.middleware.client import Client
+import psychokinetic.utils.gclient
+
+import $package.models
 import $package.views
+
+register.middleware(Client)
+
+
+
