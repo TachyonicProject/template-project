@@ -1,29 +1,32 @@
-# Informational files
-include README.rst
-include LICENSE
-include Authors
-include Contributors
-include Credits
+# Exclude any compile Python files (most likely grafted by tests/ directory).
+global-exclude *.pyc
 
-# Include docs and tests. It's unclear whether convention dictates
+# Informational files
+include *.txt
+include LICENSE
+
+# Including docs and tests. It's unclear whether convention dictates
 # including built docs. However, Sphinx doesn't include built docs, so
 # we are following their lead.
 graft docs
 prune docs/build
 graft tests
 
-# Exclude any compile Python files (most likely grafted by tests/ directory).
-global-exclude *.pyc
-
 # Setup-related things
-include pavement.py
-include requirements-dev.txt
-include requirements.txt
 include setup.py
-include tox.ini
 
-# Default Templates
+# Templates
 graft $package/ui/templates
+graft $package/templates
 
-# Static Content
+# Static
 graft $package/ui/static
+graft $package/static
+
+# Other
+recursive-include $package *.json
+recursive-include $package *.ini
+
+# NO-CYTHON PACKAGES
+recursive-exclude $package *.c
+recursive-exclude $package *.so
