@@ -14,7 +14,7 @@ description = 'Project Description'
 author = 'Myria Solutions (PTY) Ltd'
 email = 'project@tachyonic.org'
 license = 'BSD3-Clause'
-copyright = '2018 ' + author
+copyright = '2019 ' + author
 url = 'http://www.tachyonic.org'
 identity = project + ' v' + version
 
@@ -29,8 +29,8 @@ classifiers = [
     'License :: OSI Approved :: BSD License',
     'Natural Language :: English',
     'Operating System :: POSIX :: Linux',
-    'Programming Language :: Python :: 3.5',
     'Programming Language :: Python :: 3.6',
+    'Programming Language :: Python :: 3.7',
     'Topic :: Software Development',
     'Topic :: Software Development :: Libraries',
     'Topic :: Software Development :: Libraries :: Python Modules',
