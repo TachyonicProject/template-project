@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright (c) 2018 Christiaan Frans Rademan.
+# Copyright (c) 2018-2019 Christiaan Frans Rademan.
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -34,8 +34,8 @@ import glob
 import shutil
 from distutils import cmd
 
-if not sys.version_info >= (3, 5):
-    print('Requires python version 3.5 or higher')
+if not sys.version_info >= (3, 6):
+    print('Requires python version 3.6 or higher')
     exit()
 try:
     from setuptools import setup, Extension, find_packages
@@ -267,7 +267,6 @@ setup_dict = dict(
     author_email=metadata.email,
     maintainer=metadata.author,
     maintainer_email=metadata.email,
-    license=metadata.license,
     url=metadata.url,
     description=metadata.description,
     long_description=read('README.rst'),
@@ -281,9 +280,10 @@ setup_dict = dict(
     cmdclass=cmdclass,
     ext_modules=ext_modules,
     zip_safe=False,  # don't use eggs
+    python_requires='>=3.6',
     # entry_points={
     #    'console_scripts': [
-    #        '$package = $package.main:entry_point'
+    #        'luxon = $package.main:entry_point'
     #    ],
     # }
 )
