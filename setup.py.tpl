@@ -38,6 +38,11 @@ import glob
 from distutils import cmd
 from importlib.machinery import SourceFileLoader
 
+
+if not sys.version_info >= (3, 6):
+    print('Requires python version 3.6 or higher')
+    exit()
+
 try:
     from setuptools import setup, Extension, find_packages
     from setuptools.command.test import test as TestCommand
@@ -132,6 +137,7 @@ class PyTestCommand(TestCommand):
 
 cmdclass['test'] = PyTestCommand
 
+
 # define install_requires for specific Python versions
 python_version_specific_requires = []
 
@@ -181,7 +187,10 @@ setup_dict = dict(
     python_requires='>=3.6',
     # entry_points={
     #    'console_scripts': [
-    #        'luxon = $package.main:entry_point'
+    #        '$package = $package.main:entry_point'
+    #    ],
+    #    'tachyonic.ui': [
+    #         '$package = $package.ui.app'
     #    ],
     # }
 )
